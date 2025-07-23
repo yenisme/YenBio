@@ -1,76 +1,84 @@
-<!DOCTYPE html>
-<html lang="vi">
+<!DOCTYPE html><html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Khổng Mạnh Yên - Kthy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module by Kthy</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 20px;
-      text-align: center;
+      background: #f0f2f5;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
     }
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 15px;
-      max-width: 400px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    h1 {
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .card-icon {
+      font-size: 36px;
       margin-bottom: 10px;
-      font-size: 28px;
     }
-    p {
-      font-size: 16px;
-      margin: 10px 0 20px;
-    }
-    a {
-      color: #00ffff;
-      text-decoration: none;
+    .title {
       font-weight: bold;
+      margin-bottom: 5px;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    .button {
-      display: inline-block;
-      background-color: #00ffff;
-      color: #000;
-      padding: 10px 20px;
-      margin: 10px 0;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .button:hover {
-      background-color: #00dddd;
+    .desc {
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>📛 Khổng Mạnh Yên 💢</h1>
-    <p>📝 Khám phá bộ sưu tập module premium được thiết kế đặc biệt cho ShadowRocket.</p>
-    <div>
-      <a class="button" href="https://github.com/yenisme" target="_blank">🧠 GitHub</a><br />
-      <a class="button" href="https://bit.ly/yenisme" target="_blank">🔗 Info Me</a>
-      
-      <button class="button" onclick="copyLink()">Modunles 3in1😋</button>
+  <h2>📦 Bộ sưu tập module by Kthy</h2>
+  <p>Nhấn vào app để sao chép liên kết module tương ứng ✨</p>
+  <div class="grid">
+    <div class="card" onclick="copyLink('https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremium.module')">
+      <div class="card-icon">📺</div>
+      <div class="title">YouTube Premium</div>
+      <div class="desc">Xem video không quảng cáo, phát nền</div>
+    </div><div class="card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/main/Modules/Locket_Gold_Kthy.sgmodule')">
+  <div class="card-icon">📸</div>
+  <div class="title">Locket Gold</div>
+  <div class="desc">Chia sẻ ảnh với bạn bè trong album</div>
+</div>
 
-<script>
-  function copyLink() {
-    const link = "https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/3in1Locket%2CSpotify%2CYoutube.sgmodule"; // ← Thay bằng link của bạn
-    navigator.clipboard.writeText(link)
-      .then(() => alert("📋 Đã sao chép: " + link))
-      .catch(err => alert("❌ Sao chép thất bại: " + err));
-  }
-</script>
-    </div>
-  </div>
-</body>
+<div class="card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/3in1Locket%2CSpotify%2CYoutube.sgmodule')">
+  <div class="card-icon">🎁</div>
+  <div class="title">3in1 Locket,Spotify,Youtube</div>
+  <div class="desc">3App trong 1 modules</div>
+</div>
+
+<div class="card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/soundcloudplus.module')">
+  <div class="card-icon">🎵</div>
+  <div class="title">SoundCloud Go+</div>
+  <div class="desc">Phát nhạc offline, không quảng cáo</div>
+</div>
+
+<div class="card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/Wink.module')">
+  <div class="card-icon">✨</div>
+  <div class="title">Wink VIP</div>
+  <div class="desc">Chỉnh ảnh, làm đẹp</div>
+</div>
+
+  </div>  <script>
+    function copyLink(link) {
+      navigator.clipboard.writeText(link)
+        .then(() => alert("✅ Đã sao chép liên kết!"))
+        .catch(() => alert("❌ Sao chép thất bại."));
+    }
+  </script></body>
 </html>
