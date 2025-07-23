@@ -1,84 +1,118 @@
-<!DOCTYPE html><html lang="vi">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module by Kthy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bộ sưu tập module by Khổng Mạnh Yên</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 20px;
-      background: #f0f2f5;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
     }
-    .grid {
+
+    h1 {
+      font-size: 1.8rem;
+      color: #d2aaff;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 2rem;
+    }
+
+    .app-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 600px;
     }
-    .card {
-      background: white;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    .app-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 1rem;
       text-align: center;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, background 0.3s;
     }
-    .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+    .app-card:hover {
+      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.08);
     }
-    .card-icon {
-      font-size: 36px;
-      margin-bottom: 10px;
+
+    .app-card h2 {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      color: #fff;
     }
-    .title {
-      font-weight: bold;
-      margin-bottom: 5px;
+
+    .app-card p {
+      font-size: 0.9rem;
+      color: #aaa;
     }
-    .desc {
-      font-size: 14px;
-      color: #555;
+
+    .copied {
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h2>📦 Bộ sưu tập module by Kthy</h2>
+  <h1>📦 Bộ sưu tập module by Kthy</h1>
   <p>Nhấn vào app để sao chép liên kết module tương ứng ✨</p>
-  <div class="grid">
-    <div class="card" onclick="copyLink('https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremium.module')">
-      <div class="card-icon">📺</div>
-      <div class="title">YouTube Premium</div>
-      <div class="desc">Xem video không quảng cáo, phát nền</div>
-    </div><div class="card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/main/Modules/Locket_Gold_Kthy.sgmodule')">
-  <div class="card-icon">📸</div>
-  <div class="title">Locket Gold</div>
-  <div class="desc">Chia sẻ ảnh với bạn bè trong album</div>
-</div>
 
-<div class="card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/3in1Locket%2CSpotify%2CYoutube.sgmodule')">
-  <div class="card-icon">🎁</div>
-  <div class="title">3in1 Locket,Spotify,Youtube</div>
-  <div class="desc">3App trong 1 modules</div>
-</div>
+  <div class="app-grid">
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremium.module')">
+      <div>📺</div>
+      <h2>YouTube Premium</h2>
+      <p>Xem video không quảng cáo, phát nền</p>
+    </div>
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/main/Modules/Locket_Gold_Kthy.sgmodule')">
+      <div>📸</div>
+      <h2>Locket Gold</h2>
+      <p>Chia sẻ ảnh với bạn bè trong album</p>
+    </div>
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/3in1Locket%2CSpotify%2CYoutube.sgmodule')">
+      <div>🎁</div>
+      <h2>3in1 Locket,Spotify,Youtube</h2>
+      <p>3App trong 1 modules</p>
+    </div>
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/soundcloudplus.module')">
+      <div>🎵</div>
+      <h2>SoundCloud Go+</h2>
+      <p>Phát nhạc offline, không quảng cáo</p>
+    </div>
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/Wink.module')">
+      <div>✨</div>
+      <h2>Wink VIP</h2>
+      <p>Chỉnh ảnh, làm đẹp</p>
+    </div>
+  </div>
 
-<div class="card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/soundcloudplus.module')">
-  <div class="card-icon">🎵</div>
-  <div class="title">SoundCloud Go+</div>
-  <div class="desc">Phát nhạc offline, không quảng cáo</div>
-</div>
+  <div id="copied" class="copied">✅ Đã sao chép liên kết!</div>
 
-<div class="card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/Wink.module')">
-  <div class="card-icon">✨</div>
-  <div class="title">Wink VIP</div>
-  <div class="desc">Chỉnh ảnh, làm đẹp</div>
-</div>
-
-  </div>  <script>
+  <script>
     function copyLink(link) {
-      navigator.clipboard.writeText(link)
-        .then(() => alert("✅ Đã sao chép liên kết!"))
-        .catch(() => alert("❌ Sao chép thất bại."));
+      navigator.clipboard.writeText(link).then(() => {
+        const copied = document.getElementById("copied");
+        copied.style.display = "block";
+        setTimeout(() => copied.style.display = "none", 2000);
+      });
     }
-  </script></body>
+  </script>
+</body>
 </html>
