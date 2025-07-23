@@ -1,82 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Khổng Mạnh Yên - Shadowrocket Modules</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="theme-color" content="#d2aaff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bộ sưu tập module by Khổng Mạnh Yên</title>
   <style>
     body {
-      background: linear-gradient(135deg, #1e0033, #32004d);
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      color: white;
-      padding-bottom: 5rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
     }
 
-    h1, h2 {
+    h1 {
+      font-size: 1.8rem;
+      color: #d2aaff;
       text-align: center;
-      margin-top: 1.5rem;
     }
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 1rem;
+    p {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 2rem;
     }
 
-    .module {
-      background: #2c2c2c;
-      border-radius: 1rem;
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .app-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
       padding: 1rem;
-      margin-bottom: 1.2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .app-card:hover {
+      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .app-card h2 {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .app-card p {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .copied {
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .payment-card {
+      background: #1e1e1e;
+      padding: 1rem;
+      border-radius: 0.8rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       transition: 0.3s ease;
-    }
-
-    .module:hover {
-      box-shadow: 0 0 10px #00ffff44;
-      transform: scale(1.02);
-    }
-
-    .module-info {
-      max-width: 80%;
-    }
-
-    .copy-btn {
-      background: #00ffe0;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .copy-btn:active {
-      transform: scale(1.3) rotate(-10deg);
-    }
-
-    .payment-section {
-      background: #111;
-      padding: 2rem 1rem;
-      border-radius: 1rem;
-      margin: 2rem auto;
-      max-width: 500px;
-      box-shadow: 0 0 15px #00000066;
-    }
-
-    .payment-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #1e1e1e;
-      border-radius: 1rem;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      transition: 0.3s;
+      box-shadow: 0 0 0 transparent;
     }
 
     .payment-card:hover {
@@ -84,125 +87,121 @@
       transform: scale(1.01);
     }
 
-    .payment-card img {
-      width: 40px;
-      border-radius: 0.5rem;
-      margin-right: 1rem;
+    .copy-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      transition: transform 0.1s ease;
     }
 
-    .payment-info h4 {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #fff;
+    .copy-btn:active {
+      transform: scale(1.3) rotate(-10deg);
     }
 
-    .payment-info small {
-      color: #ccc;
+    .payment-box {
+      background: #121212;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      max-width: 400px;
+      margin: 2rem auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
-    .payment-info code {
-      display: block;
-      font-size: 1rem;
+    .payment-box h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #f7971e, #ffd200);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .account-info {
+      font-weight: bold;
       color: #00ffe0;
     }
 
-    .contact-btn {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      background: #ff69b4;
-      border: none;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      font-size: 22px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #ff69b4aa;
-      transition: 0.3s ease;
+    .account-name {
+      color: #888;
     }
 
-    .contact-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px #ff69b4cc;
+    /* 💜 Glow + Viền cho icon 📋 */
+    .copy-btn i {
+      color: #d2aaff;
+      border: 2px solid #d2aaff;
+      border-radius: 50%;
+      padding: 5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 5px #d2aaff66;
+    }
+
+    .copy-btn:hover i {
+      color: #fff;
+      transform: scale(1.3);
+      box-shadow: 0 0 12px #d2aaff, 0 0 20px #d2aaffaa;
     }
   </style>
 </head>
 <body>
+  <h1>📦 Bộ sưu tập module by Kthy</h1>
+  <p>Nhấn vào app để sao chép liên kết module tương ứng ✨</p>
 
-  <div class="container">
-    <h1>Khổng Mạnh Yên -Kthy-</h1>
-    <p style="text-align: center; opacity: 0.9;">📝 Khám phá bộ sưu tập module premium được thiết kế đặc biệt cho ShadowRocket</p>
-
-    <!-- Modules -->
-    <div class="module">
-      <div class="module-info">
-        <strong>YouTube Premium</strong><br>
-        <small>Xem video không quảng cáo, phát nền</small>
-      </div>
-      <button class="copy-btn" onclick="copyLink('https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremium.module')">📋</button>
+  <div class="app-grid">
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremium.module')">
+      <div>📺</div>
+      <h2>YouTube Premium</h2>
+      <p>Xem video không quảng cáo, phát nền</p>
     </div>
-
-    <div class="module">
-      <div class="module-info">
-        <strong>Locket Gold</strong><br>
-        <small>Chia sẻ ảnh với bạn bè trong album</small>
-      </div>
-      <button class="copy-btn" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/main/Modules/Locket_Gold_Kthy.sgmodule')">📋</button>
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/main/Modules/Locket_Gold_Kthy.sgmodule')">
+      <div>📸</div>
+      <h2>Locket Gold</h2>
+      <p>Chia sẻ ảnh với bạn bè trong album</p>
     </div>
-
-    <div class="module">
-      <div class="module-info">
-        <strong>3in1 Locket, Spotify, YouTube</strong><br>
-        <small>3App trong 1 modules</small>
-      </div>
-      <button class="copy-btn" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/3in1Locket%2CSpotify%2CYoutube.sgmodule')">📋</button>
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/3in1Locket%2CSpotify%2CYoutube.sgmodule')">
+      <div>🎁</div>
+      <h2>3in1 Locket,Spotify,Youtube</h2>
+      <p>3App trong 1 modules</p>
     </div>
-
-    <div class="module">
-      <div class="module-info">
-        <strong>SoundCloud Go+</strong><br>
-        <small>Phát nhạc offline, không quảng cáo</small>
-      </div>
-      <button class="copy-btn" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/soundcloudplus.module')">📋</button>
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/soundcloudplus.module')">
+      <div>🎵</div>
+      <h2>SoundCloud Go+</h2>
+      <p>Phát nhạc offline, không quảng cáo</p>
     </div>
-
-    <div class="module">
-      <div class="module-info">
-        <strong>Wink VIP</strong><br>
-        <small>Chỉnh ảnh, làm đẹp</small>
-      </div>
-      <button class="copy-btn" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/Wink.module')">📋</button>
+    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/Wink.module')">
+      <div>✨</div>
+      <h2>Wink VIP</h2>
+      <p>Chỉnh ảnh, làm đẹp</p>
     </div>
   </div>
 
-  <!-- Payment -->
-  <div class="payment-section">
-    <h2>💰 Payment</h2>
+  <div id="copied" class="copied">✅ Đã sao chép liên kết!</div>
 
+  <div class="payment-box">
+    <h2>💳 Payment</h2>
+
+    <!-- MB Bank -->
     <div class="payment-card">
-      <img src="https://ibrand.vn/wp-content/uploads/2024/07/mbbank-logo-5.png" alt="MB Bank">
-      <div class="payment-info">
-        <h4>MB Bank</h4>
-        <small>KHONG MANH YEN</small>
-        <code>1115032013</code>
+      <div style="display: flex; align-items: center;">
+        <img src="https://ibrand.vn/wp-content/uploads/2024/07/mbbank-logo-5.png" width="40" style="border-radius: 0.5rem; margin-right: 1rem;">
+        <div>
+          <div style="font-weight: bold; color: white;">MB Bank</div>
+          <div class="account-name">KHONG MANH YEN</div>
+          <div class="account-info">1115032013</div>
+        </div>
       </div>
-      <button class="copy-btn" onclick="copyText('1115032013')">📋</button>
+      <button class="copy-btn" onclick="copyLink('1115032013')"><i class="fi fi-br-document"></i></button>
     </div>
   </div>
 
-  <!-- Contact button -->
-  <button class="contact-btn" onclick="alert('Liên hệ Zalo: 0388464043')">💌</button>
-
-  <!-- Script -->
   <script>
     function copyLink(link) {
-      navigator.clipboard.writeText(link);
-      alert("Đã sao chép liên kết module!");
-    }
-
-    function copyText(text) {
-      navigator.clipboard.writeText(text);
-      alert("Đã sao chép thông tin thanh toán!");
+      navigator.clipboard.writeText(link).then(() => {
+        const copied = document.getElementById("copied");
+        copied.style.display = "block";
+        setTimeout(() => copied.style.display = "none", 2000);
+      });
     }
   </script>
 </body>
