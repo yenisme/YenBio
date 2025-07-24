@@ -5,204 +5,340 @@
   <meta name="theme-color" content="#d2aaff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bộ sưu tập module by Khổng Mạnh Yên</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-    }
+  <!-- Làm bởi Khổng Mạnh Yên -->
 
-    h1 {
-      font-size: 1.8rem;
-      color: #d2aaff;
-      text-align: center;
-    }
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+  body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #0f0c29);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
 
-    p {
-      text-align: center;
-      color: #aaa;
-      margin-bottom: 2rem;
-    }
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-    .app-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      width: 100%;
-      max-width: 600px;
-    }
+  h1 {
+    font-size: 1.8rem;
+    color: #d2aaff;
+    text-align: center;
+  }
 
-    .app-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 1rem;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.3s;
-    }
+  p {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 2rem;
+  }
 
-    .app-card:hover {
-      transform: scale(1.03);
-      background: rgba(255, 255, 255, 0.08);
-    }
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+  }
 
-    .app-card h2 {
-      margin: 0.5rem 0;
-      font-size: 1rem;
-      color: #fff;
-    }
+  .app-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.4s, background 0.3s;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
 
-    .app-card p {
-      font-size: 0.9rem;
-      color: #aaa;
-    }
+  .app-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #d2aaff;
+    box-shadow: 0 0 15px #d2aaff, 0 0 30px #d2aaff55;
+  }
 
-    .copied {
-      background: linear-gradient(to right, #8e2de2, #4a00e0);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      margin-top: 1rem;
-      display: none;
-    }
+  .app-card:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 8px #d2aaff;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
 
-    .payment-card {
-      background: #1e1e1e;
-      padding: 1rem;
-      border-radius: 0.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: 0.3s ease;
-      box-shadow: 0 0 0 transparent;
-    }
+  .app-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #d2aaff55 0%, transparent 80%);
+    animation: pulseGlow 3s infinite ease-in-out;
+    z-index: 0;
+    opacity: 0.5;
+  }
 
-    .payment-card:hover {
-      box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
-      transform: scale(1.01);
-    }
+  .app-card > * {
+    position: relative;
+    z-index: 1;
+  }
 
-    .copy-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 20px;
-      transition: transform 0.1s ease;
+  @keyframes pulseGlow {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.5;
     }
-
-    .copy-btn:active {
-      transform: scale(1.3) rotate(-10deg);
-    }
-
-    .payment-box {
-      background: #121212;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      max-width: 400px;
-      margin: 2rem auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    .payment-box h2 {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      background: linear-gradient(to right, #f7971e, #ffd200);
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 1rem;
-    }
-
-    .account-info {
-      font-weight: bold;
-      color: #00ffe0;
-    }
-
-    .account-name {
-      color: #888;
-    }
-
-    .copy-btn i {
-      color: #ff69b4;
-      font-size: 20px;
-      transition: all 0.3s ease;
-      box-shadow: none;
-      border: none;
-      border-radius: 0;
-      padding: 0;
-    }
-
-    .copy-btn:hover i {
-      color: #fff;
-      transform: scale(1.3);
-      box-shadow: 0 0 12px #d2aaff, 0 0 20px #d2aaffaa;
-    }
-
-    /* Nút 💌 */
-    .contact-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #d2aaff;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      font-size: 20px;
-      width: 48px;
-      height: 48px;
-      box-shadow: 0 0 10px #d2aaff;
-      cursor: pointer;
-      transition: 0.3s ease;
-      z-index: 999;
-    }
-
-    .contact-btn:hover {
+    50% {
       transform: scale(1.1);
-      box-shadow: 0 0 20px #d2aaff;
+      opacity: 1;
     }
+  }
 
-    .popup-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+  .app-card h2 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #fff;
+  }
 
-    .popup {
-      background: #1e1e1e;
-      padding: 2rem;
-      border-radius: 1rem;
-      text-align: center;
-      max-width: 300px;
-      box-shadow: 0 0 15px #d2aaff88;
-      color: #fff;
-    }
+  .app-card p {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
 
-    .popup h3 {
-      margin-top: 0;
-      color: #d2aaff;
-    }
+  .copied {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    display: none;
+  }
 
-    .popup a {
-      color: #d2aaff;
-      text-decoration: none;
-    }
+  .payment-card {
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+  }
 
-    .popup a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  .payment-card:hover {
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+    transform: scale(1.01);
+  }
+
+  .copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.1s ease;
+  }
+
+  .copy-btn:active {
+    transform: scale(1.3) rotate(-10deg);
+  }
+
+  .payment-box {
+    background: #121212;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .payment-box h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #f7971e, #ffd200);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+  }
+
+  .account-info {
+    font-weight: bold;
+    color: #00ffe0;
+  }
+
+  .account-name {
+    color: #888;
+  }
+
+  .copy-btn i {
+    color: #ff69b4;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .copy-btn:hover i {
+    color: #fff;
+    transform: scale(1.3);
+    box-shadow: 0 0 12px #d2aaff, 0 0 20px #d2aaffaa;
+  }
+
+  /* Nút 💌 */
+  .contact-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #d2aaff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 0 10px #d2aaff;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 999;
+  }
+
+  .contact-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #d2aaff;
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .popup {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 0 15px #d2aaff88;
+    color: #fff;
+  }
+
+  .popup h3 {
+    margin-top: 0;
+    color: #d2aaff;
+  }
+
+  .popup a {
+    color: #d2aaff;
+    text-decoration: none;
+  }
+
+  .popup a:hover {
+    text-decoration: underline;
+  }
+  /* Hiệu ứng cầu vồng cho chữ Khổng Mạnh Yên */
+.rainbow-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowShift 6s linear infinite;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes rainbowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  .info-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid rgba(168, 100, 255, 0.5); /* Viền tím nhạt */
+  border-radius: 999px;
+  color: white;
+  background: rgba(255, 255, 255, 0.02);
+  font-weight: 600;
+  font-size: 16px;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(168, 100, 255, 0.1);
+  backdrop-filter: blur(4px);
+  transition: 0.3s;
+}
+
+.info-btn i {
+  font-size: 18px;
+}
+
+/* Tùy chỉnh màu riêng cho từng icon */
+.info-btn:nth-child(1) i {
+  color: #d47aff; /* tím hồng */
+}
+
+.info-btn:nth-child(2) i {
+  color: #59a8ff; /* xanh biển */
+}
+
+.info-btn:nth-child(3) i {
+  color: #628bff; /* xanh dương */
+}
+</style> 
 </head>
 <body>
+  <!-- Khối giới thiệu -->
+<div style="background: rgba(0, 0, 0, 0.3); padding: 2rem; border-radius: 20px; max-width: 400px; width: 100%; margin-bottom: 2rem; text-align: center; box-shadow: 0 0 30px rgba(210,170,255,0.25); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+  <div style="font-size: 2rem; color: #00bfff; margin-bottom: 1rem;">Modunles Shadowrocket</div>
+  <img src="https://sf-static.upanhlaylink.com/img/image_202507247f0ab2847117c91cd240af0aea9507ae.jpg" alt="avatar" style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid #00f0ff; margin-bottom: 1rem;">
+  <div class="rainbow-text">Khổng Mạnh Yên <i class="fi fi-sr-apple-core"></i></div>
+  <div style="color: #ddd; margin-bottom: 1.5rem;">Chia sẻ modules App premium</div>
+  <!-- Nút mô-đun giống ảnh bạn gửi -->
+<div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 2rem;">
+  <div class="info-btn">
+    <i class="fas fa-star"></i> 5+ Mô-đun cao cấp
+  </div>
+  <div class="info-btn">
+    <i class="fas fa-chart-line"></i> Thời gian hoạt động 99,9%
+  </div>
+  <div class="info-btn">
+    <i class="fas fa-clock"></i> Hỗ trợ 24/7
+  </div>
+</div>
+  <div style="background: rgba(8, 27, 41, 0.7); padding: 1rem; border-radius: 12px; font-size: 0.9rem; color: white; border: 1px solid rgba(255,255,255,0.1);">
+    Bạn cần phải có sẵn app Shadowrocket ở máy nếu chưa có hãy lên AppStore tìm và tải với giá 79.000vnđ hoặc có thể thuê ID Apple cũng có thể kiếm ID Apple free để tải Shadowrocket nhé😉<a href="#" style="color: #ff69f0; text-decoration: none; font-weight: bold;">Free neen anh em tu tim hieu    </a>
+  </div>
+</div>
   <h1>📦 Bộ sưu tập module by Kthy</h1>
   <p>Nhấn vào app để sao chép liên kết module tương ứng ✨</p>
 
@@ -233,8 +369,9 @@
       <p>Chỉnh ảnh, làm đẹp</p>
     </div>
   </div>
+  
 
-  <div id="copied" class="copied">✅ Đã sao chép liên kết!</div>
+  <div id="copied" class="copied">✅ Đã sao chép Modunles!</div>
 
   <div class="payment-box">
     <h2>💳 Payment</h2>
@@ -281,4 +418,4 @@
     }
   </script>
 </body>
-</html>
+                       </html>
