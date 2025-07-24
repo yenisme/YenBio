@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="theme-color" content="#d2aaff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bộ sưu tập module by Khổng Mạnh Yên</title>
+  <title>Bộ sưu tập module cua Khổng Mạnh Yên</title>
   <!-- Làm bởi Khổng Mạnh Yên -->
 
 <style>
@@ -314,14 +314,105 @@
 .info-btn:nth-child(3) i {
   color: #628bff; /* xanh dương */
 }
+  .link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background: linear-gradient(135deg, #a864ff, #5f72ff);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(168, 100, 255, 0.2);
+}
+
+.link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(168, 100, 255, 0.4);
+}
+
+.link-btn i {
+  font-size: 18px;
+}
+
+<style>
+/* Đã gộp lại phần .link-btn thành 1 */
+.link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background: linear-gradient(135deg, #a864ff, #5f72ff);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(168, 100, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.link-btn::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #59f7ff, #c959ff);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.link-btn:hover::before {
+  opacity: 1;
+}
+
+.link-btn span, .link-btn i {
+  position: relative;
+  z-index: 1;
+}
+
+/* Thêm hiệu ứng rung lắc cho icon khi hover */
+.link-btn:hover i {
+  animation: sparkle 0.8s infinite alternate;
+  color: #fff !important;
+}
+  #particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+@keyframes sparkle {
+  0%   { transform: scale(1) rotate(0deg); opacity: 1; }
+  50%  { transform: scale(1.2) rotate(10deg); opacity: 0.8; }
+  100% { transform: scale(1) rotate(-10deg); opacity: 1; }
+}
 </style> 
 </head>
 <body>
+  <div id="particles-js"></div>
+  
   <!-- Khối giới thiệu -->
 <div style="background: rgba(0, 0, 0, 0.3); padding: 2rem; border-radius: 20px; max-width: 400px; width: 100%; margin-bottom: 2rem; text-align: center; box-shadow: 0 0 30px rgba(210,170,255,0.25); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
   <div style="font-size: 2rem; color: #00bfff; margin-bottom: 1rem;">Modunles Shadowrocket</div>
   <img src="https://sf-static.upanhlaylink.com/img/image_202507247f0ab2847117c91cd240af0aea9507ae.jpg" alt="avatar" style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid #00f0ff; margin-bottom: 1rem;">
-  <div class="rainbow-text">Khổng Mạnh Yên <i class="fi fi-sr-apple-core"></i></div>
+  <div class="rainbow-text">
+  Khổng Mạnh Yên 
+  <img src="https://i.imgur.com/RIo7BiY.gif" alt="gif" style="width: 28px; height: 28px; margin-left: 6px; vertical-align: middle; border-radius: 6px;">
+</div>
   <div style="color: #ddd; margin-bottom: 1.5rem;">Chia sẻ modules App premium</div>
   <!-- Nút mô-đun giống ảnh bạn gửi -->
 <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 2rem;">
@@ -371,8 +462,26 @@
   </div>
   
 
-  <div id="copied" class="copied">✅ Đã sao chép Modunles!</div>
+  <div id="copied" class="copied">✅ Đã sao chép liên kết!</div>
+<!-- MỤC: Các liên kết khác -->
+<div style="margin-top: 2rem; max-width: 400px; width: 100%; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 15px rgba(210,170,255,0.15);">
+  <h2 style="text-align: center; color: #d2aaff; margin-bottom: 1rem;">🔗 Các liên kết khác</h2>
+  
+  <a href="https://drive.google.com/file/d/19u5NDF5M6KK--0PQT7cznvy32F0KM9sg/view?usp=drivesdk" class="link-btn" target="_blank">
+  <img src="https://sf-static.upanhlaylink.com/img/image_20250724985bae3d8530f074f7b39fe91ae86086.jpg" alt="Liên Quân" style="width: 32px; height: 32px; border-radius: 8px;"> 
+  <span>Liên Quân Hack Map</span>
+</a>
 
+<a href="https://drive.google.com/file/d/1GlmCk7jnmWtXa2BhTLddmCX5HwGhSNZV/view?usp=drivesdk" class="link-btn" target="_blank">
+  <img src="https://sf-static.upanhlaylink.com/img/image_2025072498898519572d5463de1c42b03828c1ad.jpg" alt="CapCut Pro" style="width: 32px; height: 32px; border-radius: 8px;"> 
+  <span>CapCut Pro</span>
+</a>
+
+<a href="https://drive.google.com/file/d/15L_JyjXDFN_P8EhJYtbMkKHSKtGZ2xiw/view?usp=drivesdk" class="link-btn" target="_blank">
+  <img src="https://sf-static.upanhlaylink.com/img/image_202507240a2cc671ac467110a76de23c53e4e6bd.jpg" alt="Locket Gold♡" style="width: 32px; height: 32px; border-radius: 8px;"> 
+  <span>Locket Gold</span>
+</div>
+  
   <div class="payment-box">
     <h2>💳 Payment</h2>
     <div class="payment-card">
@@ -384,7 +493,7 @@
           <div class="account-info">1115032013</div>
         </div>
       </div>
-      <button class="copy-btn" onclick="copyLink('1115032013')"><img src="https://sf-static.upanhlaylink.com/img/image_20250724ac782addc8ffe97a55a20f6f7a93c87f.jpg" alt="document (2).png"></button>
+      <button class="copy-btn" onclick="copyLink('1115032013')"><i class="fa-solid fa-copy" style="color: #B197FC;"></i></button>
     </div>
   </div>
 
@@ -416,6 +525,54 @@
       const popup = document.getElementById("popup");
       popup.style.display = popup.style.display === "flex" ? "none" : "flex";
     }
+  
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 90,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": ["#d2aaff", "#a864ff", "#ff69b4", "#5f72ff"]
+      },
+      "shape": {
+        "type": "circle"
+      },
+      "opacity": {
+        "value": 0.4,
+        "random": true
+      },
+      "size": {
+        "value": 2,
+        "random": true
+      },
+      "line_linked": {
+        "enable": false
+      },
+      "move": {
+        "enable": true,
+        "speed": 0.5,
+        "direction": "bottom",
+        "random": true,
+        "straight": false,
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": false },
+        "onclick": { "enable": false }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
 </body>
-                       </html>
+  </html>
