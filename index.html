@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="theme-color" content="#d2aaff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO tối ưu -->
+  <meta name="description" content="Chia sẻ miễn phí các module Shadowrocket cao cấp như YouTube Premium, Locket Gold, SoundCloud Go+, và các app/game iOS Android mod không quảng cáo.">
+  <meta name="keywords" content="Shadowrocket, Shadowrocket module, YouTube Premium, Locket Gold, mod iOS, mod Android, app không quảng cáo, tải app mod, module miễn phí, SoundCloud Go+, CapCut Pro, Liên Quân Hack Map, Wink VIP">
+  <meta name="author" content="Khổng Mạnh Yên (Yenisme)">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://imglink.io/i/84ce640b-871f-4e4f-b7b3-33c0a488fadd.jpg" type="image/png">
   <title>Bộ sưu tập module cua Khổng Mạnh Yên</title>
   <!-- Làm bởi Khổng Mạnh Yên -->
 
@@ -21,7 +28,29 @@
   align-items: center;
   padding: 2rem 1rem;
 }
+.animated-title {
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff8af2, #a18bff, #8cf3ff, #ff8af2);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shine 4s linear infinite;
+    text-align: center;
+    margin: 32px 0;
+  }
 
+  .username {
+    font-style: italic;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -243,6 +272,41 @@
     box-shadow: 0 0 15px #d2aaff88;
     color: #fff;
   }
+  #popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+}
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
 
   .popup h3 {
     margin-top: 0;
@@ -257,6 +321,18 @@
   .popup a:hover {
     text-decoration: underline;
   }
+.glow-title {
+  font-weight: bold;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #d2aaff;
+  text-shadow:
+    0 0 5px #d2aaff,
+    0 0 10px #ff8cfb,
+    0 0 20px #d88aff,
+    0 0 40px #ff8cfb;
+  margin-bottom: 1rem;
+}
   /* Hiệu ứng cầu vồng cho chữ Khổng Mạnh Yên */
 .rainbow-text {
   font-size: 1.5rem;
@@ -400,6 +476,80 @@
   50%  { transform: scale(1.2) rotate(10deg); opacity: 0.8; }
   100% { transform: scale(1) rotate(-10deg); opacity: 1; }
 }
+
+.app-item {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  flex-wrap: wrap;
+}
+
+.app-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  margin-right: 1rem;
+}
+
+.app-info {
+  flex: 1;
+  color: #fff;
+}
+
+.app-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.version {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.app-desc {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.app-tags {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tag {
+  background: orange;
+  color: #000;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.size {
+  color: #0ff;
+  font-size: 0.75rem;
+}
+
+.download-btn {
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.download-btn i {
+  margin-right: 6px;
+}
 </style> 
 </head>
 <body>
@@ -407,7 +557,7 @@
   
   <!-- Khối giới thiệu -->
 <div style="background: rgba(0, 0, 0, 0.3); padding: 2rem; border-radius: 20px; max-width: 400px; width: 100%; margin-bottom: 2rem; text-align: center; box-shadow: 0 0 30px rgba(210,170,255,0.25); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
-  <div style="font-size: 2rem; color: #00bfff; margin-bottom: 1rem;">Modunles Shadowrocket</div>
+  <h1 class="glow-title">Modunles Shadowrocket</h1>
   <img src="https://sf-static.upanhlaylink.com/img/image_202507247f0ab2847117c91cd240af0aea9507ae.jpg" alt="avatar" style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid #00f0ff; margin-bottom: 1rem;">
   <div class="rainbow-text">
   Khổng Mạnh Yên 
@@ -423,15 +573,20 @@
     <i class="fas fa-chart-line"></i> Thời gian hoạt động 99,9%
   </div>
   <div class="info-btn">
-    <i class="fas fa-clock"></i> Hỗ trợ 24/7
+    <i class="fas fa-shield-alt" style="color: #58b4ff;"></i>
+    100% Uy tín
+  </div>
+  <div class="info-btn">
+    <i class="fas fa-star" style="color: gold;"></i>
+    5★ Đánh giá
   </div>
 </div>
   <div style="background: rgba(8, 27, 41, 0.7); padding: 1rem; border-radius: 12px; font-size: 0.9rem; color: white; border: 1px solid rgba(255,255,255,0.1);">
-    Bạn cần phải có sẵn app Shadowrocket ở máy nếu chưa có hãy lên AppStore tìm và tải với giá 79.000vnđ hoặc có thể thuê ID Apple cũng có thể kiếm ID Apple free để tải Shadowrocket nhé😉<a href="#" style="color: #ff69f0; text-decoration: none; font-weight: bold;">Free neen anh em tu tim hieu    </a>
+    Bạn cần phải có sẵn app Shadowrocket ở máy nếu chưa có hãy lên AppStore tìm và tải với giá 79.000vnđ hoặc có thể thuê ID Apple cũng có thể kiếm ID Apple free để tải Shadowrocket nhé😉<a href="#" style="color: #ff69f0; text-decoration: none; font-weight: bold;">Free nên anh em không đòi hỏi nhé😠</a>
   </div>
 </div>
-  <h1>📦 Bộ sưu tập module by Kthy</h1>
-  <p>Nhấn vào app để sao chép liên kết module tương ứng ✨</p>
+  <h1 class="animated-title">🔮 Bộ sưu tập module by <span class="username">@Yenisme</span></h1>
+  <p>Nhấn vào app để sao chép liên kết module tương ứng ✨Dan</p>
 
   <div class="app-grid">
     <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremium.module')">
@@ -460,12 +615,44 @@
       <p>Chỉnh ảnh, làm đẹp</p>
     </div>
   </div>
-  
+  <div style="margin-top: 2rem; max-width: 400px; width: 100%; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 15px rgba(210,170,255,0.15);">
+  <h2 style="text-align: center; color: #d2aaff; margin-bottom: 1rem;">🔗App Game dành cho IOS(Iphone)</h2>
+  <p style="color: #aaaaff; font-size: 14px; font-weight: 500; text-shadow: 0 0 4px #5555ff;">
+  📱 Tổng hợp app,game đã được mod thêm tính năng cho iOS.
+</p>
+  <div class="app-item">
+    <img src="https://imglink.io/i/0d0e420b-0c1e-4e7c-9ccf-2f1feacee5bf.webp" class="app-icon" />
+    <div class="app-info">
+      <div class="app-title">Facebook Glow</div>
+      <div class="app-desc">Chức năng đã thêm:  Nhieu chuc nang hay</div>
+      <div class="app-tags">
+        <span class="tag">APP</span>
+        <span class="size">160 MB</span>
+      </div>
+    </div>
+    <a href="LINK" class="download-btn"><i class="fa fa-download"></i> Tải xuống</a>
+  </div>
+    <div class="app-item">
+    <img src="https://sf-static.upanhlaylink.com/img/image_202507240a2cc671ac467110a76de23c53e4e6bd.jpg" class="app-icon" />
+    <div class="app-info">
+      <div class="app-title">Locket Gold</div>
+      <div class="app-desc">Chức năng đã thêm: Mo khoa tinh nang</div>
+      <div class="app-tags">
+        <span class="tag">APP</span>
+        <span class="size">191 MB</span>
+      </div>
+    </div>
+    <a href="https://github.com/apptesters-org/AppTesters_Repo/releases/download/24-07-2025/Locket_2.6.0_Gold_%40thisismanpreets_apptesters.org.ipa" class="download-btn"><i class="fa fa-download"></i> Tải xuống</a>
+  </div>
+</div>
 
   <div id="copied" class="copied">✅ Đã sao chép liên kết!</div>
 <!-- MỤC: Các liên kết khác -->
 <div style="margin-top: 2rem; max-width: 400px; width: 100%; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 15px rgba(210,170,255,0.15);">
-  <h2 style="text-align: center; color: #d2aaff; margin-bottom: 1rem;">🔗 Các liên kết khác</h2>
+  <h2 style="text-align: center; color: #d2aaff; margin-bottom: 1rem;">🔗 App Game dành cho ADR(Android)</h2>
+  <p style="color: #aaaaff; font-size: 14px; font-weight: 500; text-shadow: 0 0 4px #5555ff;">
+  📱 Tổng hợp app,game đã được mod thêm tính năng cho ADR.
+</p>
   
   <a href="https://drive.google.com/file/d/19u5NDF5M6KK--0PQT7cznvy32F0KM9sg/view?usp=drivesdk" class="link-btn" target="_blank">
   <img src="https://sf-static.upanhlaylink.com/img/image_20250724985bae3d8530f074f7b39fe91ae86086.jpg" alt="Liên Quân" style="width: 32px; height: 32px; border-radius: 8px;"> 
@@ -480,6 +667,7 @@
 <a href="https://drive.google.com/file/d/15L_JyjXDFN_P8EhJYtbMkKHSKtGZ2xiw/view?usp=drivesdk" class="link-btn" target="_blank">
   <img src="https://sf-static.upanhlaylink.com/img/image_202507240a2cc671ac467110a76de23c53e4e6bd.jpg" alt="Locket Gold♡" style="width: 32px; height: 32px; border-radius: 8px;"> 
   <span>Locket Gold</span>
+</a>
 </div>
   
   <div class="payment-box">
@@ -490,7 +678,7 @@
         <div>
           <div style="font-weight: bold; color: white;">MB Bank</div>
           <div class="account-name">KHONG MANH YEN</div>
-          <div class="account-info">1115032013</div>
+          <div class="account-info">150313</div>
         </div>
       </div>
       <button class="copy-btn" onclick="copyLink('1115032013')"><i class="fa-solid fa-copy" style="color: #B197FC;"></i></button>
@@ -529,50 +717,18 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-  particlesJS("particles-js", {
-    "particles": {
-      "number": {
-        "value": 90,
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": ["#d2aaff", "#a864ff", "#ff69b4", "#5f72ff"]
-      },
-      "shape": {
-        "type": "circle"
-      },
-      "opacity": {
-        "value": 0.4,
-        "random": true
-      },
-      "size": {
-        "value": 2,
-        "random": true
-      },
-      "line_linked": {
-        "enable": false
-      },
-      "move": {
-        "enable": true,
-        "speed": 0.5,
-        "direction": "bottom",
-        "random": true,
-        "straight": false,
-        "out_mode": "out"
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": { "enable": false },
-        "onclick": { "enable": false }
-      }
-    },
-    "retina_detect": true
-  });
+  function togglePopup() {
+    const popup = document.getElementById("popup");
+    if (popup.style.display === "flex") {
+      popup.style.animationName = "fadeOut";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 250);
+    } else {
+      popup.style.display = "flex";
+      popup.style.animationName = "fadeIn";
+    }
+  }
 </script>
 </body>
   </html>
