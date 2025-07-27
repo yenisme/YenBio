@@ -278,7 +278,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
   display: none;
   align-items: center;
   justify-content: center;
@@ -415,8 +415,6 @@
 .link-btn i {
   font-size: 18px;
 }
-
-<style>
 /* Đã gộp lại phần .link-btn thành 1 */
 .link-btn {
   display: flex;
@@ -550,6 +548,25 @@
 .download-btn i {
   margin-right: 6px;
 }
+.app-card i {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #d2aaff;
+  display: inline-block;
+}
+.app-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(210, 170, 255, 0.4); /* ánh sáng tím nhạt */
+  transition: box-shadow 0.3s ease;
+}
+
+.app-card:hover .app-icon {
+  box-shadow: 0 0 16px 6px rgba(210, 170, 255, 0.7); /* sáng mạnh hơn khi hover */
+}
 </style> 
 </head>
 <body>
@@ -586,35 +603,39 @@
   </div>
 </div>
   <h1 class="animated-title">🔮 Bộ sưu tập module by <span class="username">@Yenisme</span></h1>
-  <p>Nhấn vào app để sao chép liên kết module tương ứng ✨Dan</p>
+  <p>Nhấn vào app để sao chép liên kết module tương ứng ✨</p>
 
-  <div class="app-grid">
-    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremium.module')">
-      <div>📺</div>
-      <h2>YouTube Premium</h2>
-      <p>Xem video không quảng cáo, phát nền</p>
-    </div>
-    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/main/Modules/Locket_Gold_Kthy.sgmodule')">
-      <div>📸</div>
-      <h2>Locket Gold</h2>
-      <p>Chia sẻ ảnh với bạn bè trong album</p>
-    </div>
-    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/3in1Locket%2CSpotify%2CYoutube.sgmodule')">
-      <div>🎁</div>
-      <h2>3in1 Locket,Spotify,Youtube</h2>
-      <p>3App trong 1 modules</p>
-    </div>
-    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/soundcloudplus.module')">
-      <div>🎵</div>
-      <h2>SoundCloud Go+</h2>
-      <p>Phát nhạc offline, không quảng cáo</p>
-    </div>
-    <div class="app-card" onclick="copyLink('https://raw.githubusercontent.com/yenisme/KThy/refs/heads/main/Modules/Wink.module')">
-      <div>✨</div>
-      <h2>Wink VIP</h2>
-      <p>Chỉnh ảnh, làm đẹp</p>
-    </div>
+<div class="app-grid">
+  <div class="app-card">
+    <img src="https://play-lh.googleusercontent.com/6am0i3walYwNLc08QOOhRJttQENNGkhlKajXSERf3JnPVRQczIyxw2w3DxeMRTOSdsY=w480-h960-rw" class="app-icon" />
+    <h2>YouTube Premium</h2>
+    <p>Xem video không quảng cáo, phát nền</p>
   </div>
+
+  <div class="app-card">
+    <img src="https://sf-static.upanhlaylink.com/img/image_202507240a2cc671ac467110a76de23c53e4e6bd.jpg" class="app-icon" />
+    <h2>Locket Gold</h2>
+    <p>Chia sẻ ảnh với bạn bè trong album</p>
+  </div>
+
+  <div class="app-card">
+    <img src="https://sf-static.upanhlaylink.com/img/image_20250727a4003097e7b3c3955ec10645c468f574.jpg" class="app-icon" />
+    <h2>3in1 Locket, Spotify, YouTube</h2>
+    <p>3 App trong 1 modules</p>
+  </div>
+
+  <div class="app-card">
+    <img src="https://play-lh.googleusercontent.com/JSSeB3XQtb9sHD5FWTqVM4AksY_Kg2q20eExenxGqPJZdn2uVQxi8eoHkP5MA-IR4w=w480-h960-rw" class="app-icon" />
+    <h2>SoundCloud Go+</h2>
+    <p>Phát nhạc offline, không quảng cáo</p>
+  </div>
+
+  <div class="app-card">
+    <img src="https://play-lh.googleusercontent.com/S5fv_OqAss3s02_dWNkbe1AUXWPyKH59hXs_rtflal39ThB7Pmze01Ur4AuKzs2dOBc=w480-h960-rw" class="app-icon" />
+    <h2>Wink VIP</h2>
+    <p>Chỉnh ảnh, làm đẹp</p>
+  </div>
+</div>
   <div style="margin-top: 2rem; max-width: 400px; width: 100%; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 15px rgba(210,170,255,0.15);">
   <h2 style="text-align: center; color: #d2aaff; margin-bottom: 1rem;">🔗App Game dành cho IOS(Iphone)</h2>
   <p style="color: #aaaaff; font-size: 14px; font-weight: 500; text-shadow: 0 0 4px #5555ff;">
@@ -691,12 +712,12 @@
   <!-- Popup liên hệ -->
   <div class="popup-overlay" id="popup">
     <div class="popup">
-      <h3>📬 Liên hệ với mình</h3>
+      <h3>📩Liên hệ với mình</h3>
       <p>📱 Zalo: <strong>0328534467</strong></p>
       <p>👤 Facebook: <a href="https://facebook.com/htkt.yen" target="_blank">htkt.yen</a></p>
       <p>✈️ Telegram: <a href="https://t.me/yenisme" target="_blank">@yenisme</a></p>
       <br />
-      <button onclick="togglePopup()" style="padding: 6px 12px; border-radius: 8px; background: #d2aaff; color: #000; border: none;">Đóng</button>
+      <button onclick="togglePopup()" style="padding: 10px 40px; border-radius: 19px; background: #d2aaff; color: #000; border: none;">Đóng✔️</button>
     </div>
   </div>
 
@@ -732,3 +753,5 @@
 </script>
 </body>
   </html>
+
+
